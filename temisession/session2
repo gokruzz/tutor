@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+#include <stdlib.h>
+
+int  _isnumeric(char *arg)
+{
+	int i = 0;
+
+	while(arg[i] != '\0')
+	{
+		if (arg[i] < '0' || arg[i] > '9')
+			return (0);
+		i++;	
+	}
+	return atoi(arg);
+
+
+
+}
+
+
+int main(int argc, char **argv)
+{
+	(void)argc;
+	(void)argv;
+	int i = 1;
+	int sum = 0;
+	char number;
+
+	while (argv[i] != NULL)
+	{
+		sum = sum + _isnumeric(argv[i]);
+		i++;
+	}
+	printf("the sum is = %d", sum);
+	printf("\n");
+}
